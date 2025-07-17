@@ -1,0 +1,28 @@
+[package]
+name = "compio-ws"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+base64 = "0.22"
+compio = { git = "https://github.com/discosultan/compio", version = "0.15", features = [
+    "macros",
+    "rustls",
+] }
+http = "1"
+rand = "0.9"
+rustls = "0.23"
+sha1 = "0.10"
+simdutf8 = "0.1"
+thiserror = "2"
+webpki-roots = "1"
+
+[dev-dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+criterion = { version = "0.6", features = ["html_reports"] }
+test-case = "3"
+
+[[bench]]
+name = "frame"
+harness = false
